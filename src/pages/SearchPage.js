@@ -30,14 +30,12 @@ const SearchPage = (props) => {
   return (
     <>
       <h1>Relatório inteligente</h1>
+      
       <SearchBar 
        input={input} 
        onChange={updateInput}
       />
-      {/* <ReportList ReportList={ReportList}/> #comentado para testes*/}
       <ReportList reportList={reportList}/>
-      
-      
     </>
    );
 }

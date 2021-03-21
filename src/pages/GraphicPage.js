@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-
+import React,{Component, useState, useEffect } from 'react';
+import { getBase } from "../Util/operation";
 import {
     LineChart,
     Line,
@@ -11,23 +11,30 @@ import {
     ResponsiveContainer
 } from 'recharts';
 
-const data = [];
-/* const data = [
-{ano: '2021-01-01', valor: 2400},
-{ano: '2020-01-01', valor: 1398},
-{ano: '2019-01-01', valor: 9800},
-{ano: '2018-01-01', valor: 3908},
-{ano: '2017-01-01', valor: 4800},
-{ano: '2016-01-01', valor: 3800},
-{ano: '2015-01-01', valor: 4300},
-]; */
-class GraphicPage extends Component {
-  
-    render () {
+const GraphicPage = (params=[]) => {
+
+      const [data, setData] = useState(getBase());
+
+      function handleSetData(params) {
+        setData(params);
+      }
+      useEffect(() => {
+        handleSetData(getBase())
+      }, [])
+
+      //handleSetData(getBase())
       const width_ = window.innerWidth;
       const height_ = window.innerHeight;
-      /* const width_ = window.screen.availWidth;
-      const height_ = window.screen.availHeight; */
+      const dataa = [
+        {ano: '2021-01-01', valor: 2400},
+        {ano: '2020-01-01', valor: 1398},
+        {ano: '2019-01-01', valor: 9800},
+        {ano: '2018-01-01', valor: 3908},
+        {ano: '2017-01-01', valor: 4800},
+        {ano: '2016-01-01', valor: 3800},
+        {ano: '2015-01-01', valor: 4300},
+        ]; 
+
       if(data.length === 0){
         return (
           <div>
@@ -57,7 +64,6 @@ class GraphicPage extends Component {
         </LineChart>
         
       );
-      }
     }
 }
 
