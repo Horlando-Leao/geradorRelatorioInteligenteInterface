@@ -9,7 +9,7 @@ const SearchPage = (props) => {
 
   const fetchData = async () => {
     //return await fetch('https://restcountries.eu/rest/v2/all')
-    return await fetch('https://jsonplaceholder.typicode.com/todos')
+    return await fetch('http://127.0.0.1:5000/relatorio/nomes')
       .then(response => response.json())
       .then(data => {
          setReportList(data) 
@@ -19,7 +19,7 @@ const SearchPage = (props) => {
   const updateInput = async (input) => {
      const filtered = countryListDefault.filter(country => {
       //return country.name.toLowerCase().includes(input.toLowerCase())
-      return country.title.toLowerCase().includes(input.toLowerCase())
+      return country.nome.toLowerCase().includes(input.toLowerCase())
      })
      setInput(input);
      setReportList(filtered);

@@ -6,8 +6,8 @@ const ReportList = ({reportList=[]}) => {
     { reportList.map((data,index) => {
         if (data) {
           return (
-            <div key={data.title}>
-              <h1>{data.title}</h1>
+            <div key={data.nome}>
+              <h1>{data.nome}</h1>
 	    </div>	
     	   )	
     	 }
