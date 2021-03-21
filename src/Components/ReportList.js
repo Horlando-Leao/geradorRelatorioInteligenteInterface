@@ -7,7 +7,7 @@ const ReportList = ({reportList=[]}) => {
         if (data) {
           return (
             <div key={data.nome}>
-              <h1>{data.nome}</h1>
+              <h5>{data.nome}</h5>
 	    </div>	
     	   )	
     	 }

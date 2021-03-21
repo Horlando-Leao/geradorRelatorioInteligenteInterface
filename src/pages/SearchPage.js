@@ -4,7 +4,7 @@ import ReportList from '../Components/ReportList';
 
 const SearchPage = (props) => {
   const [input, setInput] = useState('');
-  const [countryListDefault, setReportListDefault] = useState();
+  const [reportListDefault, setReportListDefault] = useState();
   const [reportList, setReportList] = useState();
 
   const fetchData = async () => {
@@ -17,7 +17,7 @@ const SearchPage = (props) => {
        });}
 
   const updateInput = async (input) => {
-     const filtered = countryListDefault.filter(country => {
+     const filtered = reportListDefault.filter(country => {
       //return country.name.toLowerCase().includes(input.toLowerCase())
       return country.nome.toLowerCase().includes(input.toLowerCase())
      })
@@ -29,7 +29,7 @@ const SearchPage = (props) => {
 	
   return (
     <>
-      <h1>Relatório inteligente - A10 Consultoria</h1>
+      <h1>Relatório inteligente</h1>
       <SearchBar 
        input={input} 
        onChange={updateInput}
